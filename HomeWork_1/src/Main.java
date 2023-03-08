@@ -41,8 +41,8 @@ public class Main {
             }
 
             //Build the string if current number is divisible by 3, 5 or both
-            String actionName = ((i % 3 == 0) ? FIZZ_STR : "") + ((i % 5 == 0) ? BUZZ_STR : "");
-            System.out.println(actionName);
+            String oWord = ((i % 3 == 0) ? FIZZ_STR : "") + ((i % 5 == 0) ? BUZZ_STR : "");
+            System.out.println(oWord);
         }
     }
 
