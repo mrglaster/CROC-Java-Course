@@ -8,6 +8,6 @@
    ### Homework №1
 
    Write a program that displays numbers from 1 to 100.
-   Instead of numbers that are multiples of three, the program should display the word "Fizz",
+   Instead of numbers that are multiples of three, the program should display the word "Fizz", 
    and instead of multiples of five, the word "Buzz".
-   If the number is a multiple of both 3 and 5, then the program should display the word "FizzBuzz"
+   If the number is a multiple of both 3 and 5, then the program should display "Fizz" and "Buzz" combined, the word "FizzBuzz"
