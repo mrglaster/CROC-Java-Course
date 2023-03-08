@@ -31,7 +31,6 @@ public class Main {
 
     /**Does the task described above*/
     public static void fbProcessor(){
-        //We start with
         for (int i = LOOP_START_NUM; i <= LOOP_ITERATIONS_NUM; i++){
 
             //If no one of conditions works
