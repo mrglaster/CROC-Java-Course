@@ -5,6 +5,8 @@ import Records.SoundCarrier;
 import java.util.Formatter;
 
 public class Song {
+    
+    //Song class parameters
     private final String band;
     private final String name;
     private final SoundCarrier carrier;
