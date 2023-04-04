@@ -76,7 +76,7 @@ public class Main {
             // If we need to go upper
             if (element.equals("..")) {
                 deque.poll();
-            // If current element isn't the "STAY HERE" symbol
+                // If current element isn't the "STAY HERE" symbol
             } else if (!element.equals(".")) {
                 deque.push(element);
             }
@@ -84,7 +84,9 @@ public class Main {
         // Joining the deque
         List<String> resultPath = new ArrayList<>(deque);
         Collections.reverse(resultPath);
-        return '/' + String.join("/", resultPath);
+        String result = String.join("/", resultPath);
+        if (!result.startsWith("/")) result = "/" + result;
+        return result;
     }
 
 
@@ -101,10 +103,10 @@ public class Main {
             //If there is something to read from the args
             pathLine = args[0];
         }
-            // If input string isn't a path-like string
-            if (!isPathlikeString(pathLine)) {
-                throw new Exception("Unsupported path format: " + pathLine + "\n Expected path like these: \n /path/to/directory \n /path/to/directory/ \n /path/to/file.txt \n file.txt \n MAKEFILE \n");
-            }
-            System.out.println(normalizePath(pathLine));
+        // If input string isn't a path-like string
+        if (!isPathlikeString(pathLine)) {
+            throw new Exception("Unsupported path format: " + pathLine + "\n Expected path like these: \n /path/to/directory \n /path/to/directory/ \n /path/to/file.txt \n file.txt \n /да/я/умею/в/кириллицу/и/длинные/пути.да \n NO_EXTENSION_FILE \n");
         }
+        System.out.println(normalizePath(pathLine));
     }
+}
