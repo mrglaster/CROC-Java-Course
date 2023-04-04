@@ -24,7 +24,7 @@
   
   ```
   
-### English
+### ENGLISH
  
    A relative path in the file system is specified as a string, in which:
        — "." means the current directory;
