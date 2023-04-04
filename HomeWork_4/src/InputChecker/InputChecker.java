@@ -1,31 +1,23 @@
 package InputChecker;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**Class containing functions for the input data checks*/
 public class InputChecker {
 
-    /**
-     * Reads first 10  bytes of the input file and checks if they correspond to
-     * the UTF-8 Encoding
-     * */
+    /**Checks if the input file has text to read */
     private static boolean isTextFile(String filename) throws IOException {
-        try (FileInputStream fis = new FileInputStream(filename)) {
-            byte[] buffer = new byte[4096];
-            try {
-                Charset.availableCharsets().get("windows-1251").newDecoder()
-                        .decode(ByteBuffer.wrap(buffer));
-                return true;
-            } catch (CharacterCodingException e) {
-                return false;
-            }
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String sCurrentLine =  br.readLine();
+            // If there is something to read
+            if (sCurrentLine == null || sCurrentLine.contains("�")) return false;
+
+        } catch (Exception e) {
+            return false;
         }
+        return true;
     }
 
     /**Validates input files. Supports Multiple files input*/
@@ -60,9 +52,5 @@ public class InputChecker {
                 throw new IllegalArgumentException("Input file is not a text file! Unable to process!");
             }
         }
-
-
-
-
     }
 }
