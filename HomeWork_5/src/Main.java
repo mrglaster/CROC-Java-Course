@@ -61,9 +61,9 @@ public class Main {
     /**Normalizes path by the following rule:
      *
      *      A relative path in the file system is specified as a string, in which:
-     *          - "." means the current directory;
-     *          - ".." means the parent directory in relation to the current one;
-     *          - "/" is used as a directory separator.
+     *          — "." means the current directory;
+     *          — ".." means the parent directory in relation to the current one;
+     *          — "/" is used as a directory separator.
      *
      *      For the realization we used Deque in LIFO mode:
      *          if we have .. - we remove the latest element
