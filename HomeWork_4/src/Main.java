@@ -61,8 +61,10 @@ public class Main {
             System.out.println("Current file: " + fileNames[i]);
             processFile(fileNames[i]);
             System.out.println();
-
         }
+
+        System.out.println("\nWrong File Demo: \n\n");
+        InputChecker.checkInput(new String[]{"demofiles/test6.readfile" });
     }
 
 
