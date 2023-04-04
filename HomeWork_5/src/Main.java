@@ -53,7 +53,7 @@ public class Main {
     public static boolean isPathlikeString(String pathLine){
         if (pathLine.length() == 0) return false;
         String processedString = pathLine;
-        processedString = processedString.replace(".", "hi").replace("_", "l");
+        processedString = processedString.replace(".", "hi");
         String pathRegex = "^/?([\\w\\d-А-Яа-я]+/?)*([\\w\\d-А-Яа-я]+\\.?)+$";
         return  processedString.matches(pathRegex);
     }
