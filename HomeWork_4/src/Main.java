@@ -88,6 +88,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         if (args.length != 0) {
             InputChecker.checkInput(args);
+            //Multiple input files support
+            for (String arg : args) {
+                System.out.println("Current file: " + arg);
+                processFile(arg);
+                System.out.println();
+            }
         }
         else {
             demoFunction();
