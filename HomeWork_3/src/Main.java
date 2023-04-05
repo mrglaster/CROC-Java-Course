@@ -1,38 +1,102 @@
-/**                        RUSSIAN
- Определить класс, описывающий координаты шахматной клетки.
- Данные класса: компоненты x и y, отсчитываемые от левого нижнего угла.
- Все методы, позволяющие установить координаты, в том числе и конструкторы,
- должны проверять корректность аргументов и генерировать IllegalArgumentException в случае ошибочных значений.
- */
+import InputChecker.InputChecker;
 
-/***                        ENGLISH
- * Define a class that describes the coordinates of a chess cell.
- * Class data: x and y components counted from the lower left corner.
- * All methods that allow you to set coordinates, including constructors,
- * should validate the arguments and throw an IllegalArgumentException on invalid values.
- */
+import java.io.*;
+
+/**
+ *              Russian
+ * В текстовом файле слова могут быть разделены одним или несколькими пробелами, или символами перевода строки.
+ * Необходимо реализовать программу, считающую количество слов в файле и выводящую результат на экран.
+ * Путь к файлу задается первым аргументом командной строки (args[0]).
+ * В случае, если аргумент не задан – кидать IllegalArgumentException.
+ * При ошибке открытия файла сообщать об этом в консоль без вывода стектрейса.
+ *
+ * Пример:
+ *
+ * [in]
+ * Забыл  Панкрат Кондратьевич домкрат,
+ * А без домкрату ну не поднять на тракте трактор.
+ * [out]
+ * 13
+ * */
+
+/**
+ * English
+ * In a text file, words can be separated by one or more spaces or newlines.
+ * It is necessary to implement a program that counts the number of words in a file and displays the result on the screen.
+ * The path to the file is given as the first command line argument (args[0]).
+ * If the argument is not set, throw an IllegalArgumentException.
+ * If there is an error opening a file, report it to the console without outputting the stack trace.
+ *
+ * Example:
+ *
+ * [in]
+ * Забыл  Панкрат Кондратьевич домкрат,
+ * А без домкрату ну не поднять на тракте трактор.
+ * [out]
+ * 13
+ * */
+
+
+
+
 
 
 public class Main {
-    public static void main(String[] args) {
+    /**Function demonstrating functions of the program*/
+    public static void demoFunction() throws IOException {
+        System.out.println("DEMO FUNCTION STARTS!\n");
 
-        System.out.println("\nNOTE: IN THIS VERSION ALL ORIGINS START FROM (1;1) ORIGIN. IT'S A1 HERE! \n");
+        String[] fileNames = {
+                "demofiles/test1.txt",
+                "demofiles/test2.txt",
+                "demofiles/test3.lol",
+                "demofiles/test4.txt",
+                "demofiles/test5.mysupertestfile",
+        };
 
-        //Demo variables initialization
-        ChessboardSquare numericSquare = new ChessboardSquare(1, 1);
-        ChessboardSquare stringSquare = new ChessboardSquare("e4");
-
-        //Numeric version demonstration
-        System.out.println("\n    DEMONSTRATING THE NUMERIC VERSION\n");
-        System.out.print("Numeric origins: ");
-        numericSquare.printNumericOrigins();
-        System.out.println("toString Demo: " + numericSquare + '\n');
+        InputChecker.checkInput(fileNames);
 
 
-        //String based version demo
-        System.out.println("    DEMONSTRATING THE STRING BASED VERSION\n");
-        System.out.print("Numeric origins: ");
-        stringSquare.printNumericOrigins();
-        System.out.println("toString Demo: " + stringSquare +'\n');
+        for (int  i = 0; i < fileNames.length; i++){
+            System.out.println("Current file: " + fileNames[i]);
+            processFile(fileNames[i]);
+            System.out.println();
+        }
+
+        System.out.println("\nWrong File Demo: \n\n");
+        InputChecker.checkInput(new String[]{"demofiles/test6.readfile" });
+    }
+
+
+    /**Counts amount of words in the text file*/
+    public static void processFile(String fileName) throws IOException {
+        int wordCount = 0;
+        BufferedReader bReader = new BufferedReader(new FileReader(fileName));
+        String line;
+        while ((line = bReader.readLine()) != null) {
+            if (line.length() != 0) {
+                String[] words = line.trim().split("\\s+");
+                for (int i = 0; i < words.length; i++) {
+                }
+                wordCount += words.length;
+            }
+        }
+        System.out.println("Amount of Words: " + wordCount);
+    }
+
+    /**The main function. If there is no input, then the demo function will be used.*/
+    public static void main(String[] args) throws IOException {
+        if (args.length != 0) {
+            InputChecker.checkInput(args);
+            //Multiple input files support
+            for (String arg : args) {
+                System.out.println("Current file: " + arg);
+                processFile(arg);
+                System.out.println();
+            }
+        }
+        else {
+            demoFunction();
+        }
     }
 }
