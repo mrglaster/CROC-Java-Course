@@ -1,6 +1,6 @@
 public class Demonstrator {
     
-    //Default demo string
+    //Default demo string with length=77
     public static String testString = "hfdhgfdlkgjfiogvogfjgfgiodgidgdjofigjdoigjdgjdfoigdfiojgdjgodijgdfiogodifgkgj";
 
     /**Demonstrates the work of the source function on the testString (length = 72). Prints time of the work*/
