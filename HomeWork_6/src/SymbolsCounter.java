@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
         int numThreads = Runtime.getRuntime().availableProcessors();
         if(DEBUG) System.out.println("Allowed amount of threads: " + numThreads);
 
-        //Calculating the chunk size. The cрunk is one of several parts we split the input line to
+        //Calculating the chunk size. The chunk is one of several parts we split the input line to
         int chunkSize = (int) Math.ceil((double) inputLine.length() / numThreads);
         if (DEBUG) System.out.println("Size of the chunk: " + chunkSize);
 
