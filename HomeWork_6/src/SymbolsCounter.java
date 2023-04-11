@@ -5,7 +5,7 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-/**Class containing methods for the counting of templates in the strings. */
+/**Class containing methods for the counting templates amount in the strings. */
     public class SymbolsCounter {
 
     //Variable enabling/disabling the DEBUG mode
