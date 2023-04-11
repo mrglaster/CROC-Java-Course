@@ -78,7 +78,7 @@ import java.util.stream.Collectors;
     }
 
 
-    /**Experimental version using the ParallelStream */
+    /** Additional version using the ParallelStream */
     public static int countRequiredSymbol_ParallelStream(String inputLine, String template) throws Exception {
 
         // Input checks
