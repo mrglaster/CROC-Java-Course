@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
     //Variable enabling/disabling the DEBUG mode
     public static boolean DEBUG = false;
 
-    /**Source version of the countRequiredSymbol function. Unoptimized, requires much time for long strings*/
+    /**Source version of the countRequiredSymbol function. Unoptimized, requires much time for long strings processing*/
     public static int countRequiredSymbol_Source(String inputLine, String template){
         int count = 0;
         for (int i=0; i < inputLine.length(); i++) {
