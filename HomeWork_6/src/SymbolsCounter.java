@@ -88,7 +88,7 @@ import java.util.stream.Collectors;
         //Initializing of counter variable
         AtomicInteger count = new AtomicInteger();
 
-        //Converting string to List of chars
+        //Converting string to CopyOnWriteArrayList  of chars
         CopyOnWriteArrayList<Character> chars = new CopyOnWriteArrayList<>(inputLine.chars().mapToObj(c -> (char) c).collect(Collectors.toList()));
 
         //Enumerating list of chars and processing the match check
