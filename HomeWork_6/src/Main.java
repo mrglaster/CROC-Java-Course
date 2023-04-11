@@ -37,13 +37,17 @@ public class Main {
 
     /**The main function. Runs the code. */
     public static void main(String[] args) throws Exception {
+        // If there is no command line argumens, we run demo
         if (args.length == 0){
             System.out.println("\nNo command line arguments found! Let's run the demonstration function!\n");
             Demonstrator.globalDemonstration();
         }
+        // If there is only one argument when 2 are required
         else if (args.length == 1){
                 System.out.println("As minimum 2 arguments required! Got: 1");
+        
         } else {
+            // Processing command line arguments
             String inputLine = args[0];
             String template = args[1];
             Demonstrator.demoOptimizedCustomLine(inputLine, template);
