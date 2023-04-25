@@ -40,4 +40,18 @@ public class ConstantsContainer {
     public static String[] salesmenJsonFields = {"id", "last_name", "first_name"};
     public static String[] stockJsonFields = {"seller_id", "product_id", "price", "quantity"};
 
+
+    // Output Values
+    public static String oMostProductsHolder = "output/task1/most_products_owner(t1_v0).json";
+    public static String oLeastPrice = "output/task1/least_price(t1_v1).json";
+    public static String oGeneralStock = "output/task1/general_stock(t1_v2).json";
+    public static String oGeneralSold = "output/task1/general_sold(t1_v3).json";
+    public static String oTopFiveSellers = "output/task1/top_five_sellers(t1_v4).json";
+    public static String oMostPopularGoods = "output/task1/most_popular_goods(t1_v5).json";
+
+    public static String oSellsDistribution = "output/task2/sells_distribution(t2_v0).json";
+    public static String oFiveBestDates = "output/task2/five_best_dates(t2_v1).json";
+    public static String oAvgSells = "output/task2/avg_sells(t2_v2).json";
+
+
 }

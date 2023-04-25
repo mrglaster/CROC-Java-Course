@@ -60,17 +60,17 @@ public class ShopQueries {
     /**Output the top 5 sellers who sold the largest number of goods (Task I, V. 4)*/
     public static ResultSet topFiveSellersQuery(Connection connection) throws  SQLException{
         String query = """
-                SELECT s.SellerID, SUM(sa.QuantitySold) AS TotalSold
+                SELECT s.SellerID, SUM(sa.QuantitySold) AS SoldGoods
                 FROM Sellers s
                 JOIN Sales sa ON s.SellerID = sa.SellerID
                 GROUP BY s.SellerID
-                ORDER BY TotalSold DESC
+                ORDER BY SoldGoods DESC
                 LIMIT 5""";
         return processGettingQuery(connection, query);
     }
 
-    /**Output top 5 products with fast sales growth (Task I */
-    public static ResultSet topFivePopularProducts(Connection connection) throws SQLException{
+    /**Output top 5 products with fast sales growth (Task I  V.5 )*/
+    public static ResultSet topFivePopularProductsQuery(Connection connection) throws SQLException{
         String query = """
                 SELECT p.ProductID, SUM(s.QuantitySold) AS TotalSold
                 FROM Products p
@@ -83,7 +83,7 @@ public class ShopQueries {
 
 
     /**Display the distribution of the total number of sales by dates (Task II, V.0)*/
-    public static ResultSet salesDateDistribution(Connection connection) throws SQLException {
+    public static ResultSet salesDateDistributionQuery(Connection connection) throws SQLException {
         String query = """
                 SELECT SaleDate, SUM(QuantitySold) as TotalSales
                 FROM Sales
@@ -93,7 +93,7 @@ public class ShopQueries {
     }
 
     /**Display the top 5 dates on which the largest number of products were sold (Task II V.1)*/
-    public static ResultSet topSalesDays(Connection connection) throws SQLException{
+    public static ResultSet topSalesDaysQuery(Connection connection) throws SQLException{
         String query = """
                 SELECT SaleDate, SUM(QuantitySold) as TotalSales
                 FROM Sales
@@ -105,7 +105,7 @@ public class ShopQueries {
     }
 
     /**Display the average number of items sold per day (Task II V. 2) */
-    public static ResultSet getAverageSales(Connection connection) throws SQLException{
+    public static ResultSet getAverageSalesQuery(Connection connection) throws SQLException{
         String query = "SELECT SUM(QuantitySold) / COUNT(DISTINCT SaleDate) as AvgSalesPerDay FROM Sales";
         return processGettingQuery(connection, query);
 

@@ -34,6 +34,7 @@ public class DatabaseFiller {
         return '"' + inputData.toString() + '"';
     }
 
+
     /**Uploads data from the JSON file into the database*/
     private static void readDataFromJson(@NotNull  Connection conn, String filePath, String insertionInitQuery, String[] fields) throws IOException, SQLException {
         JsonArray jsonData = getJsonData(filePath);
