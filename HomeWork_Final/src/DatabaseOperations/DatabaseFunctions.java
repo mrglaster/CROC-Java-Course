@@ -1,5 +1,4 @@
 package DatabaseOperations;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -37,7 +36,6 @@ public class DatabaseFunctions {
         String query = "SELECT name FROM sqlite_master WHERE type='table' AND name='"+tableName+"'";
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(query);
-        //stmt.close();
         return  rs.getString(1) != null;
 
     }

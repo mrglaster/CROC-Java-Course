@@ -1,9 +1,10 @@
 package DatabaseOperations;
 
+/**The class used to store some constants in the one place*/
 public class ConstantsContainer {
 
-    // Path to JSON with goods
-    public static String goodsFilePath = "input_data/goods.json";
+    // Path to JSON with products
+    public static String productsFilePath = "input_data/goods.json";
 
     // Path to JSON with sales
     public static String salesFilePath = "input_data/sales.json";
@@ -23,8 +24,20 @@ public class ConstantsContainer {
     // The flag for the logger mode on/of
     public static boolean PROCESSING_LOGGER = true;
 
+
+
+    // Starts of SQL Queries for the data insertion
     public static String productsInsertionInit = "INSERT INTO Products(ProductID, ProductName) VALUES ";
     public static String salesInsertInit = "INSERT INTO Sales(SaleID, SellerID, ProductID, QuantitySold, SaleDate) VALUES ";
     public static String salesmenInsertInit = "INSERT INTO Sellers(SellerID, FirstName, LastName) VALUES ";
     public static String stockInsertInit = "INSERT INTO Stock(SellerID, ProductID, Price, Quantity) VALUES ";
+
+
+
+    // Arrays with JSON fields for every file
+    public static String[]  productsJsonFields = {"id", "name"};
+    public static String[] salesJsonFields = {"sale_id", "seller_id", "product_id", "quantity", "date"};
+    public static String[] salesmenJsonFields = {"id", "last_name", "first_name"};
+    public static String[] stockJsonFields = {"seller_id", "product_id", "price", "quantity"};
+
 }
